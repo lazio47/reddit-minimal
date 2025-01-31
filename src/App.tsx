@@ -2,9 +2,16 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import {fetchSubredditPosts, fetchPopularSubreddits} from './services/redditApi';
 
 function App() {
   const [count, setCount] = useState(0)
+
+  const click = async(): Promise<void> => {
+    setCount((count) => count + 1);
+    const sub = await fetchPopularSubreddits();
+    console.log(sub);
+  }
 
   return (
     <>
@@ -18,7 +25,7 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
+        <button onClick={() => click()}>
           count is {count}
         </button>
         <p>
