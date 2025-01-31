@@ -2,15 +2,12 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import {fetchSubredditPosts, fetchPopularSubreddits} from './services/redditApi';
 
 function App() {
   const [count, setCount] = useState(0)
 
   const click = async(): Promise<void> => {
     setCount((count) => count + 1);
-    const sub = await fetchPopularSubreddits();
-    console.log(sub);
   }
 
   return (
