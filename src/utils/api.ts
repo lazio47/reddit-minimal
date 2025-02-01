@@ -15,7 +15,7 @@ const getAccessToken = async (): Promise<string | undefined> => {
     try {
       const headers = {
         "Content-Type": "application/x-www-form-urlencoded",
-        "User-Agent": "MyApp/0.1",
+        "User-Agent": `MyApp/0.1 by ${CLIENT_ID}`,
         Authorization: `Basic ${Buffer.from(`${CLIENT_ID}:${CLIENT_SECRET}`).toString("base64")}`
       };
 
