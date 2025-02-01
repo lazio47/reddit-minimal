@@ -9,12 +9,12 @@ const AppLayout: React.FC = () => {
     }
     return (
         <div className="p-4">
-            <nav className={'h-12 border-double border-b-1 border-b-[#EDEFF1]'} >
-                <ul className="flex">
+            <nav className={'h-12 border-double border-b-1 border-b-[#EDEFF1] max-w-5xl mx-auto'} >
+                <ul className="flex  justify-around items-center">
                     <li>
                         <NavLink className={'h-12'} to={'/home'}>
-                            <img className="h-12 hidden sm:block" src="src/assets/reddit-icon-big.png" alt="Default logo" />
-                            <img className="h-12 sm:hidden" src="src/assets/reddit-icon-small.png" alt="Mobile logo" />
+                            <img className="h-11 hidden sm:block" src="src/assets/reddit-icon-big.png" alt="Default logo" />
+                            <img className="h-11 sm:hidden" src="src/assets/reddit-icon-small.png" alt="Mobile logo" />
                         </NavLink>
                     </li>
                     <li>
@@ -30,7 +30,7 @@ const AppLayout: React.FC = () => {
                         </form>
                     </li>
                     <li>
-                        <div className="flex items-center justify-center gap-1">
+                        <div className="hidden sm:flex items-center justify-center gap-1">
                             <CircleUser size={40} />
                             <div>
                                 <span className="text-xs">shelton</span>
