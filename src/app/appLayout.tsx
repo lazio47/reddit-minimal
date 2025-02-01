@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink, Outlet } from "react-router-dom";
-import { CircleUser } from 'lucide-react';
+import UserProfile from "../components/userProfile";
 
 const AppLayout: React.FC = () => {
     const onSearch = (event: React.FormEvent) => {
@@ -31,7 +31,7 @@ const AppLayout: React.FC = () => {
                     </li>
                     <li>
                         <div className="hidden sm:flex items-center justify-center gap-1">
-                            <CircleUser size={40} />
+                            <UserProfile />
                             <div>
                                 <span className="text-xs">shelton</span>
                                 <div className="flex justify-center items-center"><img className="w-4 h-4" src="src/assets/karma.png" alt="Karma icon" /><span className="text-xs text-gray-400">16 karma</span></div>
