@@ -13,7 +13,7 @@ const AppLayout: React.FC = () => {
             <nav className={'h-12 border-double border-b-1 border-b-[#EDEFF1] max-w-5xl mx-auto'} >
                 <ul className="flex  justify-around items-center">
                     <li>
-                        <NavLink className={'h-12'} to={'/home'}>
+                        <NavLink className={'h-12'} to={'/'}>
                             <img className="h-11 hidden sm:block" src="src/assets/reddit-icon-big.png" alt="Default logo" />
                             <img className="h-11 sm:hidden" src="src/assets/reddit-icon-small.png" alt="Mobile logo" />
                         </NavLink>

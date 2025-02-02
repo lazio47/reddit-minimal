@@ -50,10 +50,12 @@ const Subreddits: React.FC = () => {
         <ul>
             {subreddits.map((subreddit:subredd, index: number | string) => {
                 return (
-                    <li className={`mx-2 transition duration-300 ease-in-out cursor-pointer hover:bg-gray-200 rounded-lg flex gap-2 p-2 ${index === active ? 'active' : ''}`} key={index} onClick={() => setActive(index)}>
-                        <img className="h-5 rounded-full pl-1" src={subreddit.data.icon_img || 'src/assets/reddit-icon-small.png'} alt="Sureddit icon" />
-                        <span className="text-[16px]">{subreddit.data.display_name}</span>
-                    </li>
+                    <a href="#">
+                        <li className={`mx-2 transition duration-300 ease-in-out cursor-pointer hover:bg-gray-200 rounded-lg flex gap-2 p-2 ${index === active ? 'active' : ''}`} key={index} onClick={() => setActive(index)}>
+                            <img className="h-5 rounded-full pl-1" src={subreddit.data.icon_img || 'src/assets/reddit-icon-small.png'} alt="Sureddit icon" />
+                            <span className="text-[16px]">{subreddit.data.display_name}</span>
+                        </li>
+                    </a>
                 )
             })}
         </ul>
