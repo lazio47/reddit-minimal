@@ -4,6 +4,12 @@
   --color-redditorange: #FF4500;
 }
 
+@layer base {
+  .active {
+    @apply bg-orange-100;
+  }
+}
+
 html {
   font-size: 16px;
 }

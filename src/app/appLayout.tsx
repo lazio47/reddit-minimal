@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import UserProfile from "../components/userProfile";
+import SideSection from "../components/sideSection";
 
 const AppLayout: React.FC = () => {
     const onSearch = (event: React.FormEvent) => {
@@ -40,7 +41,10 @@ const AppLayout: React.FC = () => {
                     </li>
                 </ul>
             </nav>
-            <Outlet />
+            <div className="py-6 max-w-5xl mx-auto flex items-start gap-6">
+                <Outlet />
+                <SideSection />
+            </div>
         </div>
     );
 }

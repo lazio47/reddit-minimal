@@ -1,6 +1,7 @@
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
 import AppLayout from './app/appLayout';
-import Home from './components/home';
+import PostsPage from './pages/postsPage';
+import PageNotFound from './pages/pageNotFound';
 
 function App() {
 
@@ -8,7 +9,8 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<AppLayout/>}>
-          <Route path='/home' element={<Home/>} />
+          <Route index element={<PostsPage/>} />
+          <Route path='*' element={<PageNotFound/>}/>
         </Route>
       </Routes>
     </BrowserRouter>
