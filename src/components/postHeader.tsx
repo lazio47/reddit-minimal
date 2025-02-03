@@ -9,10 +9,10 @@ interface HeaderInfo {
 const PostHeader:React.FC<HeaderInfo> = (props:HeaderInfo) => {
     return (
         <div className="flex">
-            <img src={props.icon_img || "src/assets/reddit-icon-small.png"} />
-            <span className="font-bold text-xs">`r/${props.subreddit}`</span>
+            <img className="w-5 rounded-full mr-2" src={props.icon_img || "src/assets/reddit-icon-small.png"} />
+            <span className="font-bold text-xs">r/{props.subreddit}</span>
             <span className="inline-block my-0">•</span>
-            <span>`Posted by u/${props.author}`</span>
+            <span className="text-xs">Posted by u/{props.author}</span>
         </div>
     )
 }

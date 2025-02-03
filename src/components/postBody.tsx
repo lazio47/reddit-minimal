@@ -19,6 +19,11 @@ const PostBody:React.FC<PostInfo> = (props:PostInfo) => {
         <div>
             <PostHeader icon_img={props.icon_img} subreddit={props.subreddit} author={props.author} />
             <div className="font-bold text-lg">{props.title}</div>
+            {
+                props.video ? <video src={props.video} ></video> :
+                props.imagem ? <img src={props.imagem} alt="Post image" /> : 
+                <div className="text-sm">{props.selftext}</div>
+            }
             <PostFooter num_comments={props.num_comments} created_utc={props.created_utc} />
         </div>
     );
