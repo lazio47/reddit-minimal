@@ -16,7 +16,7 @@ interface PostAtributes {
 
 const Post:React.FC<PostAtributes> = (props: PostAtributes) => {
     return (
-        <div className="p-4 border border-gray-400 rounded-sm grid grid-cols-[1fr_4fr]">
+        <div className="p-4 border border-gray-400 rounded-sm grid grid-cols-[1fr_9fr]">
             <Score score={props.score} />
         </div>
     );
