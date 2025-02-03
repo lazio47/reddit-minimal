@@ -8,8 +8,8 @@
   .active {
     @apply bg-orange-100;
   }
-}
 
-html {
-  font-size: 16px;
+  html {
+    @apply  text-xs sm:text-[16px];
+  }
 }

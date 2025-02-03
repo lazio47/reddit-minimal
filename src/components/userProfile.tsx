@@ -3,7 +3,7 @@ import React from "react";
 
 const UserProfile:React.FC = () => {
     return (
-        <CircleUser color="#FF4500" size={40} />
+        <CircleUser color="#FF4500" size={30} />
     );
 }
 

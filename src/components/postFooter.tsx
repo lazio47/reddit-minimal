@@ -11,13 +11,13 @@ const PostFooter:React.FC<PostFooterInfo> = (props:PostFooterInfo) => {
     const date = new Date(props.created_utc);
     const passedTime = formatDistanceToNow(date, {addSuffix: true});
     return (
-        <div>
-            <div>
-                <MessageSquare color="#878A8C" size={20} />
+        <div className="flex justify-between items-center mt-4 text-xs text-[#878A8C]">
+            <div className="flex items-center gap-2">
+                <MessageSquare size={20} />
                 <span>{`${props.num_comments} Comments`}</span>
             </div>
-            <div>
-                <Hourglass color="#878A8C" size={20} />
+            <div className="flex items-center gap-2">
+                <Hourglass size={20} />
                 <span>{passedTime}</span>
             </div>
         </div>

@@ -560,9 +560,6 @@ const Posts:React.FC = () => {
 
     return (
         <div className="flex flex-col gap-2.5">
-            <div className="h-56 max-1/2 flex flex-col items-center justify-center gap-7 border border-gray-400">
-                <p className="text-redditorange text-8xl">POSTS</p>
-            </div>
             {postsList.map((post) => {
                 return <Post title={post.title} 
                                 author={post.author} 
