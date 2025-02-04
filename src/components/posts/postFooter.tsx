@@ -1,7 +1,7 @@
 import React from "react";
 import { formatDistanceToNow } from "date-fns";
 import { Hourglass, MessageSquare } from "lucide-react";
-import api from "../utils/api";
+import api from "../../utils/api";
 
 interface PostFooterInfo {
     num_comments: number,

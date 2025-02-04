@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { selectSubreddits } from "../app/slices/subredditsSlice";
+import { selectSubreddits } from "../../app/slices/subredditsSlice";
 import { useSelector } from "react-redux";
 
 const Subreddits: React.FC = () => {

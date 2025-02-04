@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import UserProfile from "../components/userProfile";
-import SideSection from "../components/sideSection";
+import SideSection from "../components/side_section/sideSection";
 
 const AppLayout: React.FC = () => {
     const onSearch = (event: React.FormEvent) => {

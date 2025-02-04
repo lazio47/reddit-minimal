@@ -1,7 +1,7 @@
 import React from "react";
 import Post from "./post";
 import { useSelector } from "react-redux";
-import { selectPosts } from "../app/slices/postsSlice";
+import { selectPosts } from "../../app/slices/postsSlice";
 
 const Posts:React.FC = () => {
 

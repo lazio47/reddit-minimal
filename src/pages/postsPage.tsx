@@ -1,6 +1,6 @@
 import React from "react";
 import Highlights from "../components/highlights";
-import Posts from "../components/posts";
+import Posts from "../components/posts/posts";
 
 const PostsPage: React.FC = () => {
     return (
