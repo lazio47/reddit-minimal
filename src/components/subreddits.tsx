@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
+import { selectSubreddits } from "../app/slices/subredditsSlice";
+import { useSelector } from "react-redux";
 
 const Subreddits: React.FC = () => {
-    /* mockup */
     interface subredd {
         data: {
             id: number,
@@ -10,41 +11,14 @@ const Subreddits: React.FC = () => {
             icon_img?: string | undefined
         }
     }
-    const subreddits:subredd[] = [
-        {
-            'data': {
-                'id': 1,
-                'display_name': '/ONE',
-                'icon_img': 'src/assets/karma.png'
-            }
-        },
-        {
-            'data': {
-                'id': 2,
-                'display_name': '/TWO',
-            }
-        },
-        {
-            'data': {
-                'id': 3,
-                'display_name': '/THREE',
-            }
-        },
-        {
-            'data': {
-                'id': 4,
-                'display_name': '/FOUR',
-            }
-        },
-        {
-            'data': {
-                'id': 5,
-                'display_name': '/FIVE',
-            }
-        }
-    ];
 
     const [active, setActive] = useState<number|string>();
+    const [subreddits, setSubreddits] = useState<subredd[]>([]);
+    const subredditsState:subredd[] = useSelector(selectSubreddits).subreddits;
+
+    useEffect(() => {
+        setSubreddits(subredditsState);
+    }, []);
 
     return (
         <ul>
