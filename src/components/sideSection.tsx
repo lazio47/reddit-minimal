@@ -5,7 +5,7 @@ import Name from "./name";
 
 const SideSection:React.FC = () => {
     return (
-        <div className="hidden sm:block max-w-[312px]">
+        <div className="hidden sm:block max-w-[250px]">
             <MyInfo />
             <SubredditList />
             <Name />

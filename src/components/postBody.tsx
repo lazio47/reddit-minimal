@@ -12,6 +12,7 @@ interface PostInfo {
     "video": string | null,
     "num_comments": number,
     "created_utc": string,
+    "permalink": string | null
 }
 
 const PostBody:React.FC<PostInfo> = (props:PostInfo) => {
@@ -24,7 +25,7 @@ const PostBody:React.FC<PostInfo> = (props:PostInfo) => {
                 props.imagem ? <img src={props.imagem} alt="Post image" /> : 
                 <div className="text-sm">{props.selftext}</div>
             }
-            <PostFooter num_comments={props.num_comments} created_utc={props.created_utc} />
+            <PostFooter permalink={props.permalink} num_comments={props.num_comments} created_utc={props.created_utc} />
         </div>
     );
 }

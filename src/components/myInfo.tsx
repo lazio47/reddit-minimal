@@ -12,7 +12,7 @@ const MyInfo: React.FC = () => {
                 </div>
             </div>
             <a href="https://github.com/lazio47" target="_blank" rel="noopener noreferrer">
-                <button className="cursor-pointer h-8 w-[280px] my-4 mx-auto flex gap-2 items-center justify-center bg-redditorange rounded-full">
+                <button className="cursor-pointer h-8 w-9/10 my-4 mx-auto flex gap-2 items-center justify-center bg-redditorange rounded-full">
                     <Github color="#ffffff" size={20}/>
                     <p className="text-white text-sm" >My Github</p>
                 </button>
