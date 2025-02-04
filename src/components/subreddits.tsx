@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useState } from "react";
 import { selectSubreddits } from "../app/slices/subredditsSlice";
 import { useSelector } from "react-redux";
@@ -13,12 +13,7 @@ const Subreddits: React.FC = () => {
     }
 
     const [active, setActive] = useState<number|string>();
-    const [subreddits, setSubreddits] = useState<subredd[]>([]);
-    const subredditsState:subredd[] = useSelector(selectSubreddits).subreddits;
-
-    useEffect(() => {
-        setSubreddits(subredditsState);
-    }, []);
+    const [subreddits, setSubreddits] = useState<subredd[]>(useSelector(selectSubreddits).subreddits);
 
     return (
         <ul>
