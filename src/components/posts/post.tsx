@@ -2,7 +2,7 @@ import React from "react";
 import Score from "../score";
 import PostBody from "./postBody";
 
-interface PostAtributes {
+export interface PostAtributes {
     "title": string,
     "id": string,
     "author": string,

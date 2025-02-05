@@ -5,7 +5,7 @@ import { selectPosts } from "../../app/slices/postsSlice";
 
 const Posts:React.FC = () => {
 
-    const postsList = useSelector(selectPosts).posts;
+    const postsList = useSelector(selectPosts("facepalm"));
 
 
     return (

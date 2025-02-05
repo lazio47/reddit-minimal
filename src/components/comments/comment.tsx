@@ -1,5 +1,4 @@
 import React from "react";
-import formatNumber from "../../utils/formats";
 import CommentScore from "../commentScore";
 import { formatDistanceToNow } from "date-fns";
 
@@ -16,14 +15,14 @@ const Comment:React.FC<CommentsData> = (comment:CommentsData) => {
     const date = new Date(comment.created_utc);
     const passedTime = formatDistanceToNow(date, {addSuffix: true})
     return (
-        <div>
-            <CommentScore score={formatNumber(comment.score)} />
+        <div className="p-0.5 grid grid-cols-[8px_1fr] gap-4">
+            <CommentScore score={comment.score} />
             <div>
                 <div>
                     {comment.body}
                 </div>
-                <div>
-                    <span>{comment.author}</span>
+                <div className="flex justify-around items-center mt-4 text-xs text-[#878A8C]">
+                    <span className="font-bold">{comment.author}</span>
                     <span>{passedTime}</span>
                 </div>
                 {
