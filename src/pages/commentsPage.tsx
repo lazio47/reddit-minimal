@@ -23,7 +23,8 @@ const CommentsPage: React.FC = () => {
                                 video={post.video} 
                                 created_utc={post.created_utc}
                                 num_comments={post.num_comments}
-                                permalink={post.permalink} />
+                                permalink={post.permalink}
+                                isComment={true} />
             
             <Comments id={post.id} />
         </div>

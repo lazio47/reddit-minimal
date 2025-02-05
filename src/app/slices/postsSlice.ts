@@ -20,7 +20,8 @@ const postsList:PostsListsAtt = {
             "video": null,
             "num_comments": 1070,
             "created_utc": "2025-02-03 18:18:22",
-            "permalink": "/r/facepalm/comments/1igvt6x/he_must_be_stopped/"
+            "permalink": "/r/facepalm/comments/1igvt6x/he_must_be_stopped/",
+            "isComment": false
         },
         {
             "title": "Elon is angry at Reddit! ❄️",
@@ -34,7 +35,8 @@ const postsList:PostsListsAtt = {
             "video": null,
             "num_comments": 620,
             "created_utc": "2025-02-03 20:16:25",
-            "permalink": "/r/facepalm/comments/1igyrwb/elon_is_angry_at_reddit/"
+            "permalink": "/r/facepalm/comments/1igyrwb/elon_is_angry_at_reddit/",
+            "isComment": false
         },
         {
             "title": "Facepalm at what lead to this decision!!",
@@ -48,7 +50,8 @@ const postsList:PostsListsAtt = {
             "video": null,
             "num_comments": 1306,
             "created_utc": "2025-02-03 15:11:37",
-            "permalink": "/r/facepalm/comments/1igr8t2/facepalm_at_what_lead_to_this_decision/"
+            "permalink": "/r/facepalm/comments/1igr8t2/facepalm_at_what_lead_to_this_decision/",
+            "isComment": false
         },
         {
             "title": "Trumps rule doesn't benefit a single American",
@@ -62,7 +65,8 @@ const postsList:PostsListsAtt = {
             "video": null,
             "num_comments": 238,
             "created_utc": "2025-02-03 20:10:54",
-            "permalink": "/r/facepalm/comments/1igymxs/trumps_rule_doesnt_benefit_a_single_american/"
+            "permalink": "/r/facepalm/comments/1igymxs/trumps_rule_doesnt_benefit_a_single_american/",
+            "isComment": false
         },
         {
             "title": "Tiny Peen",
@@ -76,7 +80,8 @@ const postsList:PostsListsAtt = {
             "video": null,
             "num_comments": 627,
             "created_utc": "2025-02-03 22:35:54",
-            "permalink": "/r/facepalm/comments/1ih281y/tiny_peen/"
+            "permalink": "/r/facepalm/comments/1ih281y/tiny_peen/",
+            "isComment": false
         },
         {
             "title": "Admit it, you got scammed 🤦",
@@ -90,7 +95,8 @@ const postsList:PostsListsAtt = {
             "video": null,
             "num_comments": 1441,
             "created_utc": "2025-02-03 11:46:59",
-            "permalink": "/r/facepalm/comments/1ign9ne/admit_it_you_got_scammed/"
+            "permalink": "/r/facepalm/comments/1ign9ne/admit_it_you_got_scammed/",
+            "isComment": false
         },
         {
             "title": "Donnie Dumbfuck loses again - NO TARIFFS LOL",
@@ -104,7 +110,8 @@ const postsList:PostsListsAtt = {
             "video": null,
             "num_comments": 491,
             "created_utc": "2025-02-03 21:41:08",
-            "permalink": "/r/facepalm/comments/1ih0vnz/donnie_dumbfuck_loses_again_no_tariffs_lol/"
+            "permalink": "/r/facepalm/comments/1ih0vnz/donnie_dumbfuck_loses_again_no_tariffs_lol/",
+            "isComment": false
         },
         {
             "title": "I'd love to see this actually happen",
@@ -118,7 +125,8 @@ const postsList:PostsListsAtt = {
             "video": null,
             "num_comments": 55,
             "created_utc": "2025-02-03 20:20:37",
-            "permalink": "/r/facepalm/comments/1igyvmf/id_love_to_see_this_actually_happen/"
+            "permalink": "/r/facepalm/comments/1igyvmf/id_love_to_see_this_actually_happen/",
+            "isComment": false
         },
         {
             "title": "Collateral damage😵",
@@ -132,7 +140,8 @@ const postsList:PostsListsAtt = {
             "video": null,
             "num_comments": 562,
             "created_utc": "2025-02-03 12:50:16",
-            "permalink": "/r/facepalm/comments/1igobu7/collateral_damage/"
+            "permalink": "/r/facepalm/comments/1igobu7/collateral_damage/",
+            "isComment": false
         },
         {
             "title": "And They’ll Just Keep Clapping",
@@ -146,7 +155,8 @@ const postsList:PostsListsAtt = {
             "video": null,
             "num_comments": 65,
             "created_utc": "2025-02-03 18:38:39",
-            "permalink": "/r/facepalm/comments/1igwbcw/and_theyll_just_keep_clapping/"
+            "permalink": "/r/facepalm/comments/1igwbcw/and_theyll_just_keep_clapping/",
+            "isComment": false
         }
 ]};
 
