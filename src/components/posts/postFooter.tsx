@@ -3,9 +3,11 @@ import { formatDistanceToNow } from "date-fns";
 import { Hourglass, MessageSquare } from "lucide-react";
 import api from "../../utils/api";
 import Comments from "../comments/comments";
+import { useNavigate } from "react-router-dom";
 
 interface PostFooterInfo {
     num_comments: number,
+    subreddit: string,
     id: string,
     created_utc: string,
     permalink: string | null
@@ -14,15 +16,10 @@ interface PostFooterInfo {
 const PostFooter:React.FC<PostFooterInfo> = (props:PostFooterInfo) => {
     const date = new Date(props.created_utc);
     const passedTime = formatDistanceToNow(date, {addSuffix: true});
-    const [showComments, setShowcomments] = useState(false);
+    const navigate = useNavigate();
 
     const test = async () => {
-        // if (props.permalink) {
-        //     const res = await api.get(`${props.permalink}.json?limit=8`);
-        //     const data = res.data;
-        //     console.log(data);
-        // }
-        setShowcomments(prev => !prev);
+        navigate(`/comments/${props.subreddit}/${props.id}`);
     }
     return (
         <div>
@@ -36,7 +33,6 @@ const PostFooter:React.FC<PostFooterInfo> = (props:PostFooterInfo) => {
                     <span>{passedTime}</span>
                 </div>
             </div>
-            {showComments && <Comments id={props.id} />}
         </div>
         
     );

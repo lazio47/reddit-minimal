@@ -1,7 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../store";
+import { CommentsData } from "../../components/comments/comment";
 
-const initialComments = {
+interface CommentsListAtt {
+    [id:string]: {
+        [comments: string]: CommentsData[]
+    }
+}
+
+const initialComments: CommentsListAtt = {
     "bbb": {
         "comments": [
             {
@@ -46,8 +53,7 @@ const initialComments = {
                 "created_utc": "2025-02-03 18:27:02",
                 "replies": []
             }
-        ],
-        "permalink": "/r/facepalm/comments/1igvt6x/he_must_be_stopped/"
+        ]
     },
     "ccc": {
         "comments": [
@@ -92,8 +98,7 @@ const initialComments = {
                 "created_utc": "2025-02-03 21:04:28",
                 "replies": []
             }
-        ],
-        "permalink": "/r/facepalm/comments/1igyrwb/elon_is_angry_at_reddit/"
+        ]
     },
     "ddd": {
         "comments": [
@@ -138,8 +143,7 @@ const initialComments = {
                 "created_utc": "2025-02-03 15:57:48",
                 "replies": []
             }
-        ],
-        "permalink": "/r/facepalm/comments/1igr8t2/facepalm_at_what_lead_to_this_decision/"
+        ]
     },
     "eee": {
         "comments": [
@@ -185,8 +189,7 @@ const initialComments = {
                 "created_utc": "2025-02-03 20:16:12",
                 "replies": []
             }
-        ],
-        "permalink": "/r/facepalm/comments/1igymxs/trumps_rule_doesnt_benefit_a_single_american/"
+        ]
     },
     "fff": {
         "comments": [
@@ -231,8 +234,7 @@ const initialComments = {
                 "created_utc": "2025-02-03 22:43:34",
                 "replies": []
             }
-        ],
-        "permalink": "/r/facepalm/comments/1ih281y/tiny_peen/"
+        ]
     },
     "ggg": {
         "comments": [
@@ -276,8 +278,7 @@ const initialComments = {
                 "created_utc": "2025-02-03 12:18:49",
                 "replies": []
             }
-        ],
-        "permalink": "/r/facepalm/comments/1ign9ne/admit_it_you_got_scammed/"
+        ]
     },
     "hhh": {
         "comments": [
@@ -322,8 +323,7 @@ const initialComments = {
                 "created_utc": "2025-02-03 21:44:26",
                 "replies": []
             }
-        ],
-        "permalink": "/r/facepalm/comments/1ih0vnz/donnie_dumbfuck_loses_again_no_tariffs_lol/"
+        ]
     },
     "iii": {
         "comments": [
@@ -368,8 +368,7 @@ const initialComments = {
                 "created_utc": "2025-02-03 20:45:57",
                 "replies": []
             }
-        ],
-        "permalink": "/r/facepalm/comments/1igyvmf/id_love_to_see_this_actually_happen/"
+        ]
     },
     "jjj": {
         "comments": [
@@ -414,8 +413,7 @@ const initialComments = {
                     }
                 ]
             }
-        ],
-        "permalink": "/r/facepalm/comments/1igobu7/collateral_damage/"
+        ]
     },
     "aaa": {
         "comments": [
@@ -460,8 +458,7 @@ const initialComments = {
                 "created_utc": "2025-02-03 19:08:22",
                 "replies": []
             }
-        ],
-        "permalink": "/r/facepalm/comments/1igwbcw/and_theyll_just_keep_clapping/"
+        ]
     }
 };
 
@@ -472,11 +469,11 @@ const commentsSlice = createSlice({
     },
     reducers: {
         addComments: (state, action) => {
-            state.comments = action.payload;
+            state.comments = {...state.comments, ...action.payload};
         }
     }
 });
 
 export default commentsSlice.reducer;
 export const {addComments} = commentsSlice.actions;
-export const selectComments = (state:RootState) => state.comments;
+export const selectComments = (id:string) => (state:RootState) => state.comments.comments[id]?.comments || [];

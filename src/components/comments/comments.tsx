@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { selectComments } from "../../app/slices/commentsSlice";
 import { useSelector } from "react-redux";
 import Comment from "./comment";
@@ -8,10 +8,10 @@ interface commentsId {
 }
 
 const Comments:React.FC<commentsId> = ({id}:commentsId) => {
-    const [comments, setComents] = useState(useSelector(selectComments).comments);
+    const comments = useSelector(selectComments(id));
     return (
         <div>
-            {comments.aaa.comments.map((comment, index) => {
+            {comments.map((comment, index) => {
                 return <Comment body={comment.body}
                                 author={comment.author}
                                 icon_img={comment.icon_img}

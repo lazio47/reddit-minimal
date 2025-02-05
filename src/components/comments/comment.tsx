@@ -2,7 +2,7 @@ import React from "react";
 import CommentScore from "../commentScore";
 import { formatDistanceToNow } from "date-fns";
 
-interface CommentsData {
+export interface CommentsData {
     "body": string,
     "author": string,
     "icon_img": string,
@@ -15,7 +15,7 @@ const Comment:React.FC<CommentsData> = (comment:CommentsData) => {
     const date = new Date(comment.created_utc);
     const passedTime = formatDistanceToNow(date, {addSuffix: true})
     return (
-        <div className="p-0.5 grid grid-cols-[8px_1fr] gap-4">
+        <div className="border border-gray-400 rounded-sm m-2 p-4 grid grid-cols-[8px_1fr] gap-4">
             <CommentScore score={comment.score} />
             <div>
                 <div>

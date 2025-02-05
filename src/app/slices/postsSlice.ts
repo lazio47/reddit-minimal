@@ -164,5 +164,5 @@ const postSlice = createSlice({
 
 export default postSlice.reducer;
 export const selectPosts = (post:string) => (state:RootState) => state.posts.posts[post];
-export const selectOnePost = (id:string) => (post:string) => (state:RootState) => state.posts.posts[post].filter((post) => post.id === id);
+export const selectOnePost = (id:string) => (post:string) => (state:RootState) => state.posts.posts[post].filter((post) => post.id === id)[0] || {};
 export const {addPosts} =  postSlice.actions;
