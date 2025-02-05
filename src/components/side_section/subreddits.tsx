@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import { selectSubreddits } from "../../app/slices/subredditsSlice";
 import { useSelector } from "react-redux";
+import api from "../../utils/api";
 
 const Subreddits: React.FC = () => {
     interface subredd {
@@ -12,8 +13,31 @@ const Subreddits: React.FC = () => {
         }
     }
 
-    const [active, setActive] = useState<number|string>();
     const [subreddits, setSubreddits] = useState<subredd[]>(useSelector(selectSubreddits).subreddits);
+
+    const getSubreddits = async () => {
+        const data = await api.get("https://www.reddit.com/subreddits/popular/.json?limit=15");
+        return data.data;
+    }
+
+    useEffect(() => {
+        const fetchSubreddits = async () => {
+            const data = await getSubreddits();
+            const processed = data.data.children.map((sub: subredd) => {
+                return {
+                    data: {
+                        id: sub.data.id,
+                        icon_img: sub.data.icon_img,
+                        display_name: sub.data.display_name
+                    }
+                }
+            });
+            setSubreddits(processed);
+        }
+        fetchSubreddits();
+    }, [])
+
+    const [active, setActive] = useState<number|string>();
 
     return (
         <ul>
@@ -22,7 +46,7 @@ const Subreddits: React.FC = () => {
                     <a href="#" key={index}>
                         <li className={`mx-2 transition duration-300 ease-in-out cursor-pointer hover:bg-gray-200 rounded-lg flex gap-2 p-2 ${index === active ? 'active' : ''}`} key={index} onClick={() => setActive(index)}>
                             {
-                                subreddit.data.icon_img ? 
+                                subreddit.data?.icon_img ? 
                                 <img className="h-5 rounded-full pl-1" src={subreddit.data.icon_img} alt="Sureddit icon" /> :
                                 <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -84,7 +108,7 @@ const Subreddits: React.FC = () => {
                             </g>
                             </svg>
                             }
-                            <span className="text-[16px]">{subreddit.data.display_name}</span>
+                            <span className="text-[16px]">{subreddit.data?.display_name}</span>
                         </li>
                     </a>
                 )
