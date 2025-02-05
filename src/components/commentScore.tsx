@@ -2,7 +2,7 @@ import { ArrowDown, ArrowUp } from "lucide-react";
 import React, { useState } from "react";
 
 interface ScoreAtribute {
-    "score": number,
+    "score": number | string,
 }
 
 const CommentScore:React.FC<ScoreAtribute> = ({score}: ScoreAtribute) => {
@@ -13,13 +13,13 @@ const CommentScore:React.FC<ScoreAtribute> = ({score}: ScoreAtribute) => {
     const handleClickArrow = (color: string, theOtherColor: string, setColor:React.Dispatch<React.SetStateAction<string>>, setTheOtherColor:React.Dispatch<React.SetStateAction<string>>, upOrDown: string) => {
         if (color === "#FF4500") {
             setColor("#878A8C");
-            upOrDown === "up" ? setScoreValue(prev => prev-1) : setScoreValue(prev => prev+1);
+            // upOrDown === "up" ? setScoreValue(prev => prev-1) : setScoreValue(prev => prev+1);
         } else {
             setTheOtherColor(color);
             setColor("#FF4500");
-            upOrDown === "up" ? 
-                            theOtherColor ==="#878A8C" ? setScoreValue(prev => prev+1) : setScoreValue(prev => prev+2) 
-                            : theOtherColor ==="#878A8C" ? setScoreValue(prev => prev-1) : setScoreValue(prev => prev-2);
+            // upOrDown === "up" ? 
+            //                 theOtherColor ==="#878A8C" ? setScoreValue(prev => prev+1) : setScoreValue(prev => prev+2) 
+            //                 : theOtherColor ==="#878A8C" ? setScoreValue(prev => prev-1) : setScoreValue(prev => prev-2);
         }
     }
     return (

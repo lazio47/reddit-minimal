@@ -4,6 +4,7 @@ import PostFooter from "./postFooter";
 
 interface PostInfo {
     "title": string,
+    "id": string
     "author": string,
     "subreddit": string,
     "icon_img": string | null,
@@ -25,7 +26,7 @@ const PostBody:React.FC<PostInfo> = (props:PostInfo) => {
                 props.imagem ? <img src={props.imagem} alt="Post image" /> : 
                 <div className="text-sm">{props.selftext}</div>
             }
-            <PostFooter permalink={props.permalink} num_comments={props.num_comments} created_utc={props.created_utc} />
+            <PostFooter id={props.id} permalink={props.permalink} num_comments={props.num_comments} created_utc={props.created_utc} />
         </div>
     );
 }

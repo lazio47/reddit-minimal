@@ -12,6 +12,7 @@ const Posts:React.FC = () => {
         <div className="flex flex-col gap-2.5">
             {postsList.map((post, index) => {
                 return <Post title={post.title} 
+                                id={post.id}
                                 author={post.author} 
                                 subreddit={post.subreddit} 
                                 score={post.score} 

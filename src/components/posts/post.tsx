@@ -4,6 +4,7 @@ import PostBody from "./postBody";
 
 interface PostAtributes {
     "title": string,
+    "id": string,
     "author": string,
     "score": number,
     "subreddit": string,
@@ -22,6 +23,7 @@ const Post:React.FC<PostAtributes> = (props: PostAtributes) => {
             <Score score={props.score} />
             <PostBody 
                     title={props.title}
+                    id={props.id}
                     author={props.author}
                     subreddit={props.subreddit}
                     icon_img={props.icon_img}

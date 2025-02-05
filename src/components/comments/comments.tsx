@@ -11,13 +11,14 @@ const Comments:React.FC<commentsId> = ({id}:commentsId) => {
     const [comments, setComents] = useState(useSelector(selectComments).comments);
     return (
         <div>
-            {comments.aaa.comments.map((comment) => {
+            {comments.aaa.comments.map((comment, index) => {
                 return <Comment body={comment.body}
                                 author={comment.author}
                                 icon_img={comment.icon_img}
                                 score={comment.score}
                                 created_utc={comment.created_utc}
-                                replies={comment.replies}  />
+                                replies={comment.replies}
+                                key={index}  />
             })}
         </div>
     );
