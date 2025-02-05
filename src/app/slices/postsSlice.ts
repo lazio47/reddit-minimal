@@ -4,6 +4,7 @@ import { RootState } from "../store";
 const postsList = [
     {
         "title": "He must be stopped..",
+        "id": "bbb",
         "author": "John_1992_funny",
         "score": 37149,
         "subreddit": "facepalm",
@@ -61,6 +62,7 @@ const postsList = [
     },
     {
         "title": "Elon is angry at Reddit! ❄️",
+        "id": "ccc",
         "author": "Miserable-Lizard",
         "score": 5547,
         "subreddit": "facepalm",
@@ -117,6 +119,7 @@ const postsList = [
     },
     {
         "title": "Facepalm at what lead to this decision!!",
+        "id": "ddd",
         "author": "Silent-Resort-3076",
         "score": 30253,
         "subreddit": "facepalm",
@@ -173,6 +176,7 @@ const postsList = [
     },
     {
         "title": "Trumps rule doesn't benefit a single American",
+        "id": "eee",
         "author": "IHavePaidMyTaxes",
         "score": 4932,
         "subreddit": "facepalm",
@@ -230,6 +234,7 @@ const postsList = [
     },
     {
         "title": "Tiny Peen",
+        "id": "fff",
         "author": "nanashi775",
         "score": 2518,
         "subreddit": "facepalm",
@@ -286,6 +291,7 @@ const postsList = [
     },
     {
         "title": "Admit it, you got scammed 🤦",
+        "id": "ggg",
         "author": "Nice_Substance9123",
         "score": 30888,
         "subreddit": "facepalm",
@@ -341,6 +347,7 @@ const postsList = [
     },
     {
         "title": "Donnie Dumbfuck loses again - NO TARIFFS LOL",
+        "id": "hhh",
         "author": "PairRevolutionary669",
         "score": 1921,
         "subreddit": "facepalm",
@@ -397,6 +404,7 @@ const postsList = [
     },
     {
         "title": "I'd love to see this actually happen",
+        "id": "iii",
         "author": "IHavePaidMyTaxes",
         "score": 2381,
         "subreddit": "facepalm",
@@ -453,6 +461,7 @@ const postsList = [
     },
     {
         "title": "Collateral damage😵",
+        "id": "jjj",
         "author": "javelin3000",
         "score": 11149,
         "subreddit": "facepalm",
@@ -509,6 +518,7 @@ const postsList = [
     },
     {
         "title": "And They’ll Just Keep Clapping",
+        "id": "aaa",
         "author": "ParticularAd8919",
         "score": 2870,
         "subreddit": "facepalm",
