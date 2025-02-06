@@ -1,20 +1,21 @@
-import React, { useState } from "react";
+import React from "react";
 import { formatDistanceToNow } from "date-fns";
 import { Hourglass, MessageSquare } from "lucide-react";
-import api from "../../utils/api";
-import Comments from "../comments/comments";
 import { useNavigate } from "react-router-dom";
 
 interface PostFooterInfo {
     num_comments: number,
     subreddit: string,
     id: string,
-    created_utc: string,
+    created_utc: string | number,
     permalink: string | null
 }
 
 const PostFooter:React.FC<PostFooterInfo> = (props:PostFooterInfo) => {
-    const date = new Date(props.created_utc);
+    const createdUtc = props.created_utc;
+    const date = typeof createdUtc === 'number'
+            ? new Date(createdUtc * 1000)
+            : new Date(createdUtc);
     const passedTime = formatDistanceToNow(date, {addSuffix: true});
     const navigate = useNavigate();
 

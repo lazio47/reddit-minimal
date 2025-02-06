@@ -12,7 +12,7 @@ interface PostInfo {
     "imagem": string | null,
     "video": string | null,
     "num_comments": number,
-    "created_utc": string,
+    "created_utc": string|number,
     "permalink": string | null
 }
 

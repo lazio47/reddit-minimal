@@ -11,8 +11,8 @@ function App() {
       <Routes>
         <Route path='/' element={<AppLayout/>}>
           <Route index element={<PostsPage/>} />
-          <Route path='posts/:id' element={<PostsPage/>} />
-          <Route path='comments/:subreddit/:id' element={<CommentsPage />} />
+          <Route path='/posts/:subreddit' element={<PostsPage/>} />
+          <Route path='/comments/:subreddit/:id' element={<CommentsPage />} />
           <Route path='*' element={<PageNotFound/>}/>
         </Route>
       </Routes>
