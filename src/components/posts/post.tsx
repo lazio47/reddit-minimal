@@ -18,6 +18,9 @@ export interface PostAtributes {
     "created_utc": string|number,
     "permalink": string | null;
     "isComment": boolean
+    "url_overridden_by_dest": string | null
+    "post_hint": string | null
+    "media": any | undefined
 }
 
 const Post:React.FC<PostAtributes> = (props: PostAtributes) => {

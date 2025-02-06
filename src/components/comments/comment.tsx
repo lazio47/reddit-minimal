@@ -12,10 +12,16 @@ export interface CommentsData {
 }
 
 const Comment:React.FC<CommentsData> = (comment:CommentsData) => {
-    const date = new Date(comment.created_utc);
+    const createdUtc = comment.created_utc;
+    if (!createdUtc) {
+        return <></>
+    }
+    const date = typeof createdUtc === 'number'
+            ? new Date(createdUtc * 1000)
+            : new Date(createdUtc);
     const passedTime = formatDistanceToNow(date, {addSuffix: true})
     return (
-        <div className="border border-gray-400 rounded-sm m-2 p-4 grid grid-cols-[8px_1fr] gap-4">
+        <div className="border-l border-l-gray-400 rounded-sm m-2 p-4 grid grid-cols-[8px_1fr] gap-4">
             <CommentScore score={comment.score} />
             <div>
                 <div>

@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSelector, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../store";
 import { PostAtributes } from "../../components/posts/post";
 
@@ -27,5 +27,8 @@ const postSlice = createSlice({
 
 export default postSlice.reducer;
 export const selectPosts = (post:string) => (state:RootState) => state.posts.posts[post];
-export const selectOnePost = (id:string) => (post:string) => (state:RootState) => state.posts.posts[post].filter((post) => post.id === id)[0] || {};
+export const createSelectOnePost = (id:string, subreddit:string) =>  createSelector(
+    (state:RootState) => state.posts.posts[subreddit]?.filter((post) => post.id === id)[0],
+    (posts: PostAtributes) => posts || {}
+)
 export const {addPosts} =  postSlice.actions;

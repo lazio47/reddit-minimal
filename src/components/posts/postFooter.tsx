@@ -12,21 +12,26 @@ interface PostFooterInfo {
 }
 
 const PostFooter:React.FC<PostFooterInfo> = (props:PostFooterInfo) => {
+    const navigate = useNavigate();
     const createdUtc = props.created_utc;
+
+    if (!createdUtc) {
+        return <></>
+    }
+
     const date = typeof createdUtc === 'number'
             ? new Date(createdUtc * 1000)
             : new Date(createdUtc);
     const passedTime = formatDistanceToNow(date, {addSuffix: true});
-    const navigate = useNavigate();
 
-    const test = async () => {
+    const seeComments = () => {
         navigate(`/comments/${props.subreddit}/${props.id}`);
     }
     return (
         <div>
             <div className="flex justify-between items-center mt-4 text-xs text-[#878A8C]">
-                <div className="flex items-center gap-2">
-                    <MessageSquare /* To Change */ onClick={() => test()} size={20} />
+                <div onClick={() => seeComments()} className="flex items-center gap-2 cursor-pointer">
+                    <MessageSquare size={20} />
                     <span>{`${props.num_comments} Comments`}</span>
                 </div>
                 <div className="flex items-center gap-2">

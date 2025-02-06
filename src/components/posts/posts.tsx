@@ -34,8 +34,8 @@ const Posts:React.FC = () => {
                         "subreddit": post.data.subreddit,
                         "icon_img": await getIcon(post.data.author),
                         "selftext": post.data.selftext,
-                        "imagem": post.data.imagem,
-                        "video": post.data.video,
+                        "imagem": post.data.post_hint === "image" ? post.data.url_overridden_by_dest : null,
+                        "video": post.data.media?.reddit_video?.fallback_url,
                         "num_comments": post.data.num_comments,
                         "created_utc": post.data.created_utc,
                         "permalink": post.data.permalink,
@@ -88,7 +88,10 @@ const Posts:React.FC = () => {
                                 num_comments={post.num_comments}
                                 permalink={post.permalink} 
                                 key={index}
-                                isComment={false} />
+                                isComment={false}
+                                url_overridden_by_dest={null}
+                                post_hint={null}
+                                media={undefined} />
             })}
         </div>
         

@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSelector, createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../store";
 import { CommentsData } from "../../components/comments/comment";
 
@@ -469,7 +469,7 @@ const commentsSlice = createSlice({
     },
     reducers: {
         addComments: (state, action) => {
-            state.comments = {...state.comments, ...action.payload};
+            state.comments = {...state.comments, [action.payload.id]: {comments: action.payload.comments}};
         }
     }
 });
@@ -477,3 +477,10 @@ const commentsSlice = createSlice({
 export default commentsSlice.reducer;
 export const {addComments} = commentsSlice.actions;
 export const selectComments = (id:string) => (state:RootState) => state.comments.comments[id]?.comments || [];
+export const selectHasComments = (id:string) => (state:RootState) => state.comments.comments[id] ? true : false;
+export const makeSelectComments = (id: string) =>
+    createSelector(
+      (state: RootState) => state.comments.comments[id]?.comments,
+      (comments) => comments || []
+    );
+  
