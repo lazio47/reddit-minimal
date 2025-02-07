@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { addPosts, createSelectOnePost } from "../app/slices/postsSlice";
 import { useDispatch, useSelector } from "react-redux";
 import Post from "../components/posts/post";
@@ -6,29 +6,32 @@ import Comments from "../components/comments/comments";
 import { useNavigate, useParams } from "react-router-dom";
 import { selectHasComments, addComments } from "../app/slices/commentsSlice";
 import { getComments } from "../utils/api";
-import { RootState } from "../app/store";
 
 const CommentsPage: React.FC = () => {
     const {subreddit, id} = useParams<{subreddit: string, id: string}>();
     const dispatch = useDispatch();
     const hasComments = useSelector(selectHasComments(id!));
     const navigate = useNavigate();
+    const [controller, setController] = useState<number>(1);
 
-    const selectOnePost = useMemo(() => createSelectOnePost(id!, subreddit!), [id, subreddit]);
+    const selectOnePost = useMemo(() => createSelectOnePost(id!, subreddit!), [controller]);
     const post = useSelector(selectOnePost);
 
     useEffect(() => {
         const lookForComments = async () => {
             if (!post.author) {
+                console.log(subreddit)
+                console.log(id)
                 const cachedPosts = localStorage.getItem(`posts${subreddit}`);
-                console.log(cachedPosts)
+                const cachedPostsJson = JSON.parse(cachedPosts!);
                 dispatch(
                     addPosts({
                         subreddit: subreddit || "",
-                        posts: JSON.parse(cachedPosts || "")
+                        posts: cachedPostsJson
                     })
                 );
-                
+                setController(prev => prev + 1);
+                console.log(post);
                 if (!post.author) navigate("/notfound");
             }
 
@@ -37,13 +40,13 @@ const CommentsPage: React.FC = () => {
                 if (cached) {
                     const cachedJson = JSON.parse(cached);
                     dispatch(addComments({
-                        id: post.id,
+                        "id": post.id,
                         comments: cachedJson
                     }))
                 } else {
                     const comments = await getComments(post.permalink!);
                     dispatch(addComments({
-                        id: post.id,
+                        "id": post.id,
                         comments
                     }));
                     localStorage.setItem(`comments${id}`, JSON.stringify(comments));
@@ -67,7 +70,10 @@ const CommentsPage: React.FC = () => {
                                 created_utc={post.created_utc}
                                 num_comments={post.num_comments}
                                 permalink={post.permalink}
-                                isComment={true} />
+                                isComment={true}
+                                post_hint={null} 
+                                url_overridden_by_dest={null}
+                                media={null}/>
             
             <Comments id={post.id} />
         </div>

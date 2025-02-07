@@ -45,11 +45,11 @@ const Posts:React.FC = () => {
             );
             console.log(processed);
             dispatch(addPosts({
-                subreddit,
+                subreddit: processed[0]?.subreddit,
                 posts: processed
             }))
 
-            localStorage.setItem(`posts${subreddit}`, JSON.stringify(processed))
+            localStorage.setItem(`posts${processed[0]?.subreddit}`, JSON.stringify(processed))
             setPostsLists(processed);
         }
 
