@@ -13,7 +13,7 @@ const Posts:React.FC = () => {
 
     let {subreddit} = useParams<{subreddit: string}>();
     if (!subreddit) {
-        subreddit = "facepalm"
+        subreddit = "Home"
     }
 
     const [postsList, setPostsLists] = useState<PostAtributes[]>();
