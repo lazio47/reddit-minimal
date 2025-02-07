@@ -9,7 +9,7 @@ const AppLayout: React.FC = () => {
 
     const onSearch = (event: React.FormEvent) => {
         event.preventDefault();
-        const link = `/posts/${keyWord}`;
+        const link = `/posts/${keyWord.split(" ").join("")}`;
         setKeyword("");
         navigate(link);
     }
