@@ -22,7 +22,7 @@ const Posts:React.FC = () => {
     
     useEffect(() => {
         const fetchPosts = async() => {
-            const data = await getPosts(subreddit);
+            const data = await getPosts(subreddit.split(" ").join(""));
             console.log(data.data.children)
             const processed = await Promise.all(
                 data.data.children.map(async (post: PostFetchAttributes) => {
